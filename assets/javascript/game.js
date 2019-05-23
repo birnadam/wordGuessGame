@@ -18,22 +18,136 @@ function okay(){
     rand = Math.floor(Math.random()*words.length);
     word = words[rand];
     document.getElementById('infoPage').style.display = "none";
+    document.getElementById('gamePage').style.display = "block";
+    game();
 }
 
-//Present blanks for users to guess
-//-The letters from the string will be used to cross-reference
-//with the user's key entries 
+//Create placeholder variables for loops
+let numWrong = 0;
+let numRight = 0;
+let wordLength = 0;
+let numChar = 0;
 
-//Following each guess, subtract from amount of guesses given
-
+//Keyboard layout for user to pick letters for the game
+//Each time a letter is used it disappears from the display
 //Refresh the blank spaces with correct letters
+function game(){
+    let x = word.length;
+    let y = x-1;
+    let spaces = 0;
+    let validChar = new Array("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+    for(z = 0; z < word.length; z++){
+        let letter = word.substring(y,x);
+        if(validChar.indexOf(letter) > -1){
+            x--;
+            y--;
+        }
+    }
+   
+    x = word.length;
+    y = x-1;
+    while (x>0){
+        numChar++;
+        let letter = word.substring(y,x);
+         //Present blanks for users to guess
+        if(letter === " "){
+            document.getElementById('letter'+x).innerHTML = "&nbsp;";
+            document.getElementById('letter'+x).style.visibility = "hidden";
+            document.getElementById('letter'+x).style.display = "block";
+            document.getElementById('underline'+x).style.display = "block";
+            spaces++;
+        }
+        
+        else{
+            document.getElementById('letter'+x).innerHTML = letter;
+            document.getElementById('letter'+x).style.visibility = "hidden";
+            document.getElementById('underline'+x).style.display = "block";            
+            document.getElementById('underline'+x).style.borderBottom = "3px solid black";
+        }
+        x--;
+        y--;
+    }
+    wordLength = word.length - spaces;
+    document.getElementById('multiPage').style.display = "none";
+    document.getElementById('gamePage').style.display = "block";
+}
+
+//-The letters from the string will be used to cross-reference
+//with the user's key entries and will count incorrect guesses
+function guessLetter(){
+    let correct = 0;
+    let target = event.target || event.srcElement;
+    target.style.visibility = "hidden";
+    let lower = target.id;
+    let upper = document.getElementById(lower).getAttribute('value');
+    let results = document.getElementById('results');
+    let ul1 = document.getElementById('underline1').offsetWidth;
+    for(a = 1; a < 11; a++){
+        if(document.getElementById('letter'+a).innerHTML === upper || document.getElementById('letter'+a).innerHTML === lower){
+            document.getElementById('letter'+a).style.visibility = "visible";
+            correct++;
+            numRight++;
+        }
+    }
+    if(correct==0){
+        numWrong++;
+    }
+    // show amount of missed guesses remaining
+    if(numWrong==1){
+        results.style.visibility = "visible";
+        results.style.color = "red";
+        results.innerHTML = "4 more misses allowed";
+        
+    }
+
+    if(numWrong==2){
+        results.style.visibility = "visible";
+        results.style.color = "red";
+        results.innerHTML = "3 more misses allowed";
+        
+    }
+
+    if(numWrong==3){
+        results.style.visibility = "visible";
+        results.style.color = "red";
+        results.innerHTML = "2 more misses allowed";
+        
+    }
+    if(numWrong==4){
+        results.style.visibility = "visible";
+        results.style.color = "red";
+        results.innerHTML = "Don't miss another letter!";
+        
+    }//If user runs out of guesses, alert loss
+    if(numWrong==5){
+        results.innerHTML = "You lose!<br>Don't stop, keep guessing until you've got it.";
+     
+
+    }
+    if(numRight==wordLength){
+        win();
+    }
+}
+
+//Win function removes keyboard from display and shows results
+function win(){
+    let ul1 = document.getElementById('underline1').offsetWidth;
+        results.style.visibility = "visible";
+        results.style.color = "#00b100";
+    if(numWrong > 5){
+        results.innerHTML = "Took you long enough to figure it out...";
+        document.getElementById('letterBank').style.display = "none";
+    
+    }
+    else{
+        results.innerHTML = "You win!";
+        document.getElementById('letterBank').style.display = "none";
+
+        //If user guesses correctly, play a sound 
+        document.getElementById('myTune').play();
+    }
+}
 
 //Display the letters user have already guessed on the side
 
-//If user runs out of guesses, alert loss and reset the game
-
-//If user guesses correctly, play a sound, 
-//tally up win, and reset the game
-
-
-
+ //reset the game following win or loss, tally up wins

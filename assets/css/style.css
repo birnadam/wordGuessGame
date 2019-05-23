@@ -106,3 +106,79 @@ body, html, #introPage, #introText, #introText p, #sp{
     background: -moz-linear-gradient(left, #000081, white);
     background: linear-gradient(to right, #000081, white);
 }
+
+#gamePage{
+    display: none;
+    text-align: center;
+}
+
+#gamePage p{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 10%;
+}
+
+#wordWrap{
+    display: inline-block;
+    width: 830px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10{
+    font-family: 'Gloria Hallelujah', cursive;
+    width: 50px;
+    height: 60px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 50px;
+    line-height: 60px;
+}
+
+#underline1, #underline2, #underline3, #underline4, #underline5, #underline6, #underline7, #underline8, #underline9, #underline10{
+    display: none;
+    float: left;
+    width: 50px;
+    height: 60px;
+    margin-right: 5px;
+}
+
+#letterBank{
+    width: 780px;
+    height: 125px;
+    margin: 20px auto;
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    -webkit-user-select: none;        
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+#letterBank div{
+    float: left;
+    width: 50px;
+    height: 58px;
+    margin: 0px 10px 10px 0px;
+    cursor: pointer;
+    background-color: #adadad;
+}
+
+#letterBank div:hover{
+    background-color: #797979;
+}
+
+#letterBank div:active{
+    background-color: gray;
+    width: 50px;
+    font-size: 45px;
+    padding-top: 3px;
+}
+
+#results{
+    margin-top: 5px;
+    height: 70px;
+    visibility: hidden;
+    line-height: 70px;
+    font-size: 25px;
+}
