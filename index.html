@@ -3,16 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mythical Creature Guessing Game</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel = "stylesheet" type = "text/css" href = "assets/css/style.css">
+    <script type = "text/javascript" src = "assets/javascript/game.js"></script>
 </head>
 
 <body>
-
-    <script type = "text/javascript" src = "assets/javascript/game.js"></script>
-  
-
+    <div id="introPage">
+        <div id="introText">
+            <p>Welcome to Sky Terrace!</p>
+            <p>Pick a letter every turn until word is guessed</p>
+            <p>You have 5 incorrect letters before you lose</p>
+            <p>Each correct word will grant you a point</p>
+            <p>Click Enter to begin!</p>
+            <br>
+            <div id="buttonContainer">
+                <div id="sp" onclick="sp()">Enter</div>               
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

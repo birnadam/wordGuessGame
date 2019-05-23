@@ -1,6 +1,10 @@
 //Display instructions
 
 //Create word bank that gets randomly picked
+//-word bank (strings in an array):
+const words = ["unicorn", "dragon", "mermaid", "fairy", "werewolf", "leprechaun", "sphinx", "griffin", "pegasus", "chimera",
+"centaur", "ghoul", "troll", "gnome", "pixie", "phoenix"];
+
 //-Array containing several words (strings) and then shuffle 
 
 //Present blanks for users to guess

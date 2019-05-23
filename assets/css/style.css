@@ -1,0 +1,68 @@
+html{
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    background: #c1c1c1;
+    background: -webkit-linear-gradient(#c1c1c1, white, #c1c1c1);
+    background: -o-linear-gradient(#c1c1c1, white, #c1c1c1);
+    background: -moz-linear-gradient(#c1c1c1, white, #c1c1c1);
+    background: linear-gradient(#c1c1c1, white, #c1c1c1);
+}
+
+body, html, #introPage, #introText, #introText p, #sp{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#introPage{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+#introPage{
+    display: block;
+    height: 650px;
+    width: 850px;
+}
+
+#introText{
+    width: 850px;
+    height: 260px;
+    margin: 10px auto;
+}
+
+#introText p{
+    font-size: 40px;
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+#buttonContainer{
+    height: 75px;
+    position:relative;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+    
+#sp{
+    font-size: 35px;
+    height: 75px;
+    float: center;
+    line-height: 75px;
+    text-align: center;
+    color: white;
+    background-color: #00006c;
+    border-radius: 25px;
+    cursor: pointer;
+}
