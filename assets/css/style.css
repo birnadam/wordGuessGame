@@ -66,3 +66,43 @@ body, html, #introPage, #introText, #introText p, #sp{
     border-radius: 25px;
     cursor: pointer;
 }
+
+#infoPage{
+    height: 560px;
+    display: none;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto; 
+    width: 90%;
+}
+
+#infoPage p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    width: 50%;
+    font-size: 40px;
+    text-align: center;
+}
+
+#ready{
+    height: 135px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    width: 50%;
+}    
+
+#okay{
+    height: 150%;
+    font-size: 70px;
+    line-height: 150px;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+    background: #000081;
+    background: -webkit-linear-gradient(left, #000081, white);
+    background: -o-linear-gradient(left, #000081, white);
+    background: -moz-linear-gradient(left, #000081, white);
+    background: linear-gradient(to right, #000081, white);
+}
