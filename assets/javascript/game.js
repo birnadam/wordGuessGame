@@ -68,7 +68,6 @@ function game(){
         y--;
     }
     wordLength = word.length - spaces;
-    document.getElementById('multiPage').style.display = "none";
     document.getElementById('gamePage').style.display = "block";
 }
 
@@ -77,7 +76,8 @@ function game(){
 function guessLetter(){
     let correct = 0;
     let target = event.target || event.srcElement;
-    target.style.visibility = "hidden";
+    //Display the letters user have already guessed in gold
+    target.style.backgroundColor = "gold";
     let lower = target.id;
     let upper = document.getElementById(lower).getAttribute('value');
     let results = document.getElementById('results');
@@ -129,6 +129,9 @@ function guessLetter(){
     }
 }
 
+//Create variable to keep track of wins
+let winCount = 0;
+
 //Win function removes keyboard from display and shows results
 function win(){
     let ul1 = document.getElementById('underline1').offsetWidth;
@@ -145,9 +148,17 @@ function win(){
 
         //If user guesses correctly, play a sound 
         document.getElementById('myTune').play();
+        winCount++;
+    }
+//Display the score beneath the keyboard following the first win, cap at 20 
+    if(winCount<20){
+        score.style.visibility = "visible";
+        score.innerHTML = "You have" + " " + winCount + " " + "win";
+        
     }
 }
 
-//Display the letters user have already guessed on the side
 
- //reset the game following win or loss, tally up wins
+
+ //reset the game following win or loss
+
