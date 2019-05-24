@@ -67,6 +67,10 @@ body, html, #introPage, #introText, #introText p, #sp{
     cursor: pointer;
 }
 
+#sp:hover{
+    color: orange;
+}
+
 #infoPage{
     height: 560px;
     display: none;
@@ -94,8 +98,9 @@ body, html, #introPage, #introText, #introText p, #sp{
 }    
 
 #okay{
-    height: 150%;
-    font-size: 70px;
+    height: 100%;
+    font-size: 50px;
+    width: 100%;
     line-height: 150px;
     text-align: center;
     border: 1px solid black;
@@ -106,6 +111,11 @@ body, html, #introPage, #introText, #introText p, #sp{
     background: -moz-linear-gradient(left, #000081, white);
     background: linear-gradient(to right, #000081, white);
 }
+
+#okay:hover{
+    color: orange;
+}
+
 
 #gamePage{
     display: none;
@@ -219,4 +229,8 @@ body, html, #introPage, #introText, #introText p, #sp{
     background: -o-linear-gradient(left, #000081, white);
     background: -moz-linear-gradient(left, #000081, white);
     background: linear-gradient(to right, #000081, white);
+}
+
+#reset:hover{
+    color: orange;
 }
