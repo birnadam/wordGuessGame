@@ -206,3 +206,17 @@ body, html, #introPage, #introText, #introText p, #sp{
     background-color: #adadad;
 }
 
+#reset{
+    display:none;
+    height: 150%;
+    font-size: 70px;
+    line-height: 150px;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+    background: #000081;
+    background: -webkit-linear-gradient(left, #000081, white);
+    background: -o-linear-gradient(left, #000081, white);
+    background: -moz-linear-gradient(left, #000081, white);
+    background: linear-gradient(to right, #000081, white);
+}

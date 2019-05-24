@@ -18,6 +18,7 @@ function okay(){
     rand = Math.floor(Math.random()*words.length);
     word = words[rand];
     document.getElementById('infoPage').style.display = "none";
+    document.getElementById('reset').style.display = "none";
     document.getElementById('gamePage').style.display = "block";
     game();
 }
@@ -76,8 +77,8 @@ function game(){
 function guessLetter(){
     let correct = 0;
     let target = event.target || event.srcElement;
-    //Display the letters user have already guessed in gold
-    target.style.backgroundColor = "gold";
+    //The letters user have already guessed will be hidden
+    target.style.visibility = "hidden";
     let lower = target.id;
     let upper = document.getElementById(lower).getAttribute('value');
     let results = document.getElementById('results');
@@ -121,7 +122,7 @@ function guessLetter(){
     }//If user runs out of guesses, alert loss
     if(numWrong==5){
         results.innerHTML = "You lose!<br>Don't stop, keep guessing until you've got it.";
-     
+        document.getElementById('reset').style.display = "block"; 
 
     }
     if(numRight==wordLength){
@@ -140,11 +141,11 @@ function win(){
     if(numWrong > 5){
         results.innerHTML = "Took you long enough to figure it out...";
         document.getElementById('letterBank').style.display = "none";
-    
     }
     else{
         results.innerHTML = "You win!";
         document.getElementById('letterBank').style.display = "none";
+        document.getElementById('reset').style.display = "block"; 
 
         //If user guesses correctly, play a sound 
         document.getElementById('myTune').play();
@@ -161,4 +162,52 @@ function win(){
 
 
  //reset the game following win or loss
+ function reset(){
+    rand = 0;
+    word = "";
+    numWrong = 0;
+    numRight = 0;
+    wordLength = 0;
+    numChar = 0;
 
+    document.getElementById('letterBank').style.display="block";
+    document.getElementById('a').style.visibility="visible";
+    document.getElementById('b').style.visibility="visible";
+    document.getElementById('c').style.visibility="visible";
+    document.getElementById('d').style.visibility="visible";
+    document.getElementById('e').style.visibility="visible";
+    document.getElementById('f').style.visibility="visible";
+    document.getElementById('g').style.visibility="visible";
+    document.getElementById('h').style.visibility="visible";
+    document.getElementById('i').style.visibility="visible";
+    document.getElementById('j').style.visibility="visible";
+    document.getElementById('k').style.visibility="visible";
+    document.getElementById('l').style.visibility="visible";
+    document.getElementById('m').style.visibility="visible";
+    document.getElementById('n').style.visibility="visible";
+    document.getElementById('o').style.visibility="visible";
+    document.getElementById('p').style.visibility="visible";
+    document.getElementById('q').style.visibility="visible";
+    document.getElementById('r').style.visibility="visible";
+    document.getElementById('s').style.visibility="visible";
+    document.getElementById('t').style.visibility="visible";
+    document.getElementById('u').style.visibility="visible";
+    document.getElementById('v').style.visibility="visible";
+    document.getElementById('w').style.visibility="visible";
+    document.getElementById('x').style.visibility="visible";
+    document.getElementById('y').style.visibility="visible";
+    document.getElementById('z').style.visibility="visible";
+
+
+ 
+
+    let ul1 = document.getElementById('underline1').offsetWidth;
+    for(a = 1; a < 11; a++){
+        document.getElementById('letter'+a).innerHTML = "&nbsp;";
+        document.getElementById('underline'+a).style.width = ul1 + "px";
+        document.getElementById('underline'+a).style.display = "none";
+        document.getElementById('underline'+a).style.borderBottom = "0px";
+    }
+   
+    okay();
+}
