@@ -2,6 +2,7 @@
 function sp(){
     document.getElementById('introPage').style.display = "none";
     document.getElementById('infoPage').style.display = "block";
+    document.getElementById('infoImage').style.display = "block";
 }
 
 //Create word bank that gets randomly picked

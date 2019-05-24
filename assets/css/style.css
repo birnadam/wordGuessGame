@@ -41,7 +41,10 @@ body, html, #introPage, #introText, #introText p, #sp{
 }
 
 #introText p{
-    font-size: 40px;
+    color: white;
+    background-color: #00006c;
+    font-size: 30px;
+    font-weight: bold;
     text-align: center;
     margin: 0 auto 20px auto;
 }
@@ -81,6 +84,7 @@ body, html, #introPage, #introText, #introText p, #sp{
 }
 
 #infoPage p{
+    color: white;
     display: block;
     margin-left: auto;
     margin-right: auto; 
@@ -126,6 +130,7 @@ body, html, #introPage, #introText, #introText p, #sp{
     font-size: 40px;
     text-align: center;
     margin-top: 10%;
+    
 }
 
 #wordWrap{
@@ -133,6 +138,7 @@ body, html, #introPage, #introText, #introText p, #sp{
     width: 830px;
     margin: 0 auto;
     padding: 10px;
+    height: 200px;
 }
 
 #letter1, #letter2, #letter3, #letter4, #letter5, #letter6, #letter7, #letter8, #letter9, #letter10{
@@ -186,8 +192,8 @@ body, html, #introPage, #introText, #introText p, #sp{
 }
 
 #results{
-    margin-top: 5px;
-    height: 70px;
+    margin-top: 0px;
+    height: 150px;
     visibility: hidden;
     line-height: 70px;
     font-size: 25px;
@@ -204,7 +210,6 @@ body, html, #introPage, #introText, #introText p, #sp{
     -webkit-user-select: none;        
     -moz-user-select: none;
     -ms-user-select: none;
-    color: blue;
 }
 
 #score div{
@@ -233,4 +238,23 @@ body, html, #introPage, #introText, #introText p, #sp{
 
 #reset:hover{
     color: orange;
+}
+
+#introImage{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#infoImage{
+    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
