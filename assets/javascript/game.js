@@ -151,17 +151,19 @@ function win(){
         document.getElementById('myTune').play();
         winCount++;
     }
-//Display the score beneath the keyboard following the first win, cap at 20 
-    if(winCount<20){
+//Display the score beneath the keyboard following the first win
+    if(winCount===1){
         score.style.visibility = "visible";
         score.innerHTML = "You have" + " " + winCount + " " + "win";
+    }
+    if(winCount>1){
+        score.style.visibility = "visible";
+        score.innerHTML = "You have" + " " + winCount + " " + "wins";
         
     }
 }
 
-
-
- //reset the game following win or loss
+ //the button to reset the game comes up after 5 failed tries or a win
  function reset(){
     rand = 0;
     word = "";
@@ -197,9 +199,6 @@ function win(){
     document.getElementById('x').style.visibility="visible";
     document.getElementById('y').style.visibility="visible";
     document.getElementById('z').style.visibility="visible";
-
-
- 
 
     let ul1 = document.getElementById('underline1').offsetWidth;
     for(a = 1; a < 11; a++){
